@@ -17,4 +17,4 @@ fields - an array of hashes containing information about fields
       { input_type: 'string', input_field: 'name' },
       { input_type: 'string', input_field: 'content' },
     ]
-(type is not used yet)
+(input_type is not used yet)
