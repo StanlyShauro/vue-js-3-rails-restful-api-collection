@@ -25,6 +25,7 @@
 
 <script>
 import { onMounted, ref, defineComponent, watch, watchEffect, toRef, toRefs } from 'vue';
+import { Modal } from "bootstrap";
 
 export default defineComponent({
   name: "EditableListItemForm",
@@ -43,7 +44,7 @@ export default defineComponent({
     
     onMounted(()=>{
       modal_form = document.getElementById('staticBackdrop');
-      modal = new window.b_modal(modal_form, {
+      modal = new Modal(modal_form, {
         keyboard: false,
         backdrop: 'static'
       });
