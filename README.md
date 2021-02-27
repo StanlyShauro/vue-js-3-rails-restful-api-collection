@@ -7,11 +7,14 @@ Bootstrap 5 is used for layout.
 ## Usage
 
 list_url - collection index url, for example '/posts'
+
 item_name - name of an item for POST and PATCH requests
+
 fields - an array of hashes containing information about fields
-example:
-[
+
+    example:
+    [
       { input_type: 'string', input_field: 'name' },
       { input_type: 'string', input_field: 'content' },
-]
+    ]
 (type is not used yet)
