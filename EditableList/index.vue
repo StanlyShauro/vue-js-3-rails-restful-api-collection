@@ -37,7 +37,7 @@
 
 <script>
 import { onMounted, ref, defineComponent } from 'vue';
-import { getPutHeader } from '../../../tools';
+import { getPutHeader } from '../tools';
 
 import EditableListRow from './EditableListRow'
 import EditableListItemForm from './EditableListItemForm'
