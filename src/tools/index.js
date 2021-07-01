@@ -9,8 +9,16 @@ const getPutHeader = () => {
             "Accept": "application/json",
             'X-Requested-With': 'XMLHttpRequest'
             }
-}
+};
+
+const sortArrayBy = (array, field_name, direction = 1) => {
+  return (array.sort( 
+    (a,b) => (a[field_name] > b[field_name]) ? 
+      1*direction : 
+        ((b[field_name] > a[field_name]) ? -1*direction : 0)))
+};
 
 export {
-  getPutHeader
+  getPutHeader,
+  sortArrayBy,
 }

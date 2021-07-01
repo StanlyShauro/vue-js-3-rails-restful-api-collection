@@ -1,6 +1,6 @@
 <template>
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" :id="uniq_id" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -12,6 +12,8 @@
             <span class="input-group-text w-50" id="inputGroup-sizing-sm"> {{ key.input_field }}</span>
             <input v-model="item[key.input_field]" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
+          <slot name='customFormFields' :item='item'></slot>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="$emit('cancel')">Cancel</button>
@@ -25,6 +27,7 @@
 
 <script>
 import { onMounted, ref, defineComponent, watch, watchEffect, toRef, toRefs } from 'vue';
+
 
 export default defineComponent({
   name: "EditableListItemForm",
@@ -40,9 +43,10 @@ export default defineComponent({
     var modal = null;
 
     const { toggle_form } = toRefs(props);
+    const uniq_id = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
     
     onMounted(()=>{
-      modal_form = document.getElementById('staticBackdrop');
+      modal_form = document.getElementById(uniq_id);
       modal = new window.bootstrap.Modal(modal_form, {
         keyboard: false,
         backdrop: 'static'
@@ -50,6 +54,10 @@ export default defineComponent({
     })
 
     watch( toggle_form, () => {  if (modal != null) { modal.toggle() } })
+
+    return {
+      uniq_id
+    }
   }
 })
 </script>

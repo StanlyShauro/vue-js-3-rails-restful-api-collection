@@ -1,6 +1,6 @@
 {
   "name": "vue-js-3-rails-restful-api-collection",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue 3 rails restful api realization.",
   "main": "dist/vue-js-3-rails-restful-api-collection.js",
   "scripts": {
