@@ -48,7 +48,6 @@
           >
             <i class="bi bi-pencil-square"></i>
           </td>
-
         </tr>
 
 
